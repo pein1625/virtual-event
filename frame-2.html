@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="Description" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="./css/libs.css?v=1.0" />
+        <link rel="stylesheet" type="text/css" href="./css/app.css?v=1.0" />
+    </head>
+    <body>
+        <!-- main content-->
+        <div class="page">
+            <div class="page__content">
+                <div class="page__body frame">
+                    <div class="row align-items-center justify-content-center g-0 w-100">
+                        <div class="col-sm-5">
+                            <div class="frame__frame">
+                                <div class="frame__img"><img src="" alt=""></div><img class="frame__overlay" src="./images/intro-overlay.svg" alt="">
+                            </div>
+                            <input class="js-image-value" type="hidden">
+                            <div class="frame__btns">
+                                <button class="frame__btn frame__btn--download js-download-image" type="button">Download photo</button>
+                                <button class="frame__btn frame__btn--share" type="button" data-bs-toggle="collapse" data-bs-target="#frame-share">Share now</button>
+                                <div class="collapse" id="frame-share">
+                                    <div class="row g-2">
+                                        <div class="col-6"><a class="frame__btn text-center frame__btn--facebook" href="#!"><img src="./images/icon-facebook.png" alt="" height="20">
+                                                <div class="fs-12 mt-1">Facebook</div>
+                                            </a></div>
+                                        <div class="col-6"><a class="frame__btn text-center frame__btn--twitter" href="#!"><img src="./images/icon-twitter.png" alt="" height="20">
+                                                <div class="fs-12 mt-1">Twitter</div>
+                                            </a></div>
+                                    </div>
+                                </div>
+                                <label class="frame__btn frame__btn--upload">
+                                    <input class="js-input-preview" type="file" data-target=".frame__img"><span>Upload photo</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- JS-->
+        <script src="./js/libs.js?v=1.0"></script>
+        <script src="./vendor/dom2image/dom2image.min.js?v=1.0"></script>
+        <script src="./js/app.js?v=1.0"></script>
+    </body>
+</html>

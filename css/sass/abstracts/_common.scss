@@ -1,0 +1,63 @@
+.popup-mobile-size {
+  @media (max-width: 575px) and (orientation: portrait) {
+    min-height: 80vh;
+  }
+}
+
+.page {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  &__content {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    overflow: overlay;
+
+    &::-webkit-scrollbar-track {
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      padding: 0 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background-color: #555;
+      background-clip: content-box;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  @media (max-width: 767px) {
+    &__body {
+      padding: 20px;
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.m-game {
+  width: 100%;
+  max-width: calc(100vh - 131px);
+  margin: 0 auto;
+
+  &__circle {
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 7s cubic-bezier(0.25, 0.1, 0, 1);
+    overflow: hidden;
+  }
+
+  &.is-finished &__light {
+    display: block;
+  }
+
+  &__overlay,
+  &__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 7s cubic-bezier(0.25, 0.1, 0, 1);
+  }
+
+  &__light {
+    display: none;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    transform: rotateZ(-112.5deg) skewX(44.5deg);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top right, #fcf39d, #f8e543);
+      opacity: 0.35;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__caret {
+    height: 10%;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    filter: drop-shadow(4px 4px 8px rgba(#000, 0.6));
+  }
+
+  @media (max-width: 575px) {
+    max-width: 80%;
+  }
+}
+
+.lucky-rotation {
+  font-family: $bevn;
+
+  &__content {
+    padding-left: 40px;
+    padding-right: 16px;
+  }
+
+  &__title {
+    font-size: 62px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #141ed2;
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-top: 16px;
+    color: #141ed2;
+  }
+
+  &__btn {
+    font-size: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (max-width: 1199px) {
+    &__content {
+      padding-left: 20px;
+    }
+
+    &__title {
+      font-size: 50px;
+    }
+
+    &__desc {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    &__content {
+      padding-left: 0;
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__desc {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__content {
+      padding-right: 0;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__desc {
+      font-size: 12px;
+    }
+
+    &__btn {
+      font-size: 12px;
+      padding: 4px 20px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    &__content {
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+  }
+}

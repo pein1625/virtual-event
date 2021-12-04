@@ -1,0 +1,105 @@
+.navbar {
+  &__wrapper {
+    display: flex;
+    width: 300px;
+    height: 100vh;
+    flex-direction: column;
+    position: fixed;
+    z-index: $zindex-fixed;
+    top: 0;
+    left: -100%;
+    background-color: $white;
+    transition: 0.3s;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  &__logo {
+    @extend .header__logo;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    line-height: 1;
+  }
+
+  &__close {
+    padding: 0 2px;
+    background-color: transparent;
+    border: 0;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+
+    &:before {
+      content: "\f104\f104\f104";
+      font-family: "fontawesome";
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__backdrop {
+    display: block;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: -100%;
+    transition: left 0s 0.3s, opacity 0.3s;
+  }
+
+  &.is-show &__wrapper {
+    left: 0;
+  }
+
+  &.is-show &__backdrop {
+    left: 0;
+    opacity: 0.5;
+    transition: left 0s, opacity 0.3s;
+  }
+
+  @include media-breakpoint-up(xl) {
+    display: block;
+    position: static;
+    padding: 0;
+
+    &__wrapper {
+      display: block;
+      width: auto;
+      height: auto;
+      position: static;
+      background: 0;
+      z-index: 0;
+      top: auto;
+      left: auto;
+      transition: unset;
+    }
+
+    &__body {
+      padding: 0;
+      overflow: visible;
+    }
+
+    &__backdrop,
+    &__header {
+      display: none;
+    }
+  }
+}

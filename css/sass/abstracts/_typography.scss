@@ -1,0 +1,5 @@
+@include font-face("BeVietnamPro", "BeVietnamPro-Light");
+@include font-face("BeVietnamPro", "BeVietnamPro-Light", 300);
+@include font-face("BeVietnamPro", "BeVietnamPro-Bold", 700);
+
+$bevn: "BeVietnamPro", sans-serif;

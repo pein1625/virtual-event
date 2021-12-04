@@ -1,0 +1,41 @@
+.header {
+  position: relative;
+  z-index: $zindex-fixed;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__logo {
+    display: inline-flex;
+    margin: 10px 0;
+
+    img {
+      height: 50px;
+    }
+  }
+
+  &__elements {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  @include media-breakpoint-up(xl) {
+    &__logo {
+      img {
+        height: 80px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    &__logo {
+      img {
+        height: 100px;
+      }
+    }
+  }
+}

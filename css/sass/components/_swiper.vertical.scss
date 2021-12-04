@@ -1,0 +1,87 @@
+.preview {
+  display: grid;
+  grid-template-columns: 90px calc(100% - 106px);
+  grid-template-rows: auto;
+  grid-gap: 16px;
+  grid-auto-flow: row dense;
+
+  &__main {
+    grid-column: 2 / span 1;
+  }
+
+  &__thumbs {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    position: relative;
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: 60px calc(100% - 70px);
+    grid-gap: 10px;
+  }
+}
+
+.preview-slider {
+  &__frame {
+    @include frame("rect", 75%);
+    background-color: $white;
+  }
+}
+
+.thumb-slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &__frame {
+    @include frame("rect", 75%);
+  }
+
+  &.has-nav {
+    padding: 20px 0;
+  }
+
+  &.has-nav &__prev,
+  &.has-nav &__next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &.has-nav &__next {
+    top: auto;
+    bottom: 0;
+  }
+
+  &:not(.has-nav) &__prev,
+  &:not(.has-nav) &__next {
+    display: none;
+  }
+
+  &__prev,
+  &__next {
+    display: none;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+  }
+}

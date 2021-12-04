@@ -1,0 +1,203 @@
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &:not(.menu-sub) {
+    border-bottom: 1px solid $gray-500;
+  }
+
+  &-item {
+    position: relative;
+    border-top: 1px solid $gray-500;
+  }
+
+  &-link {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  &-toggle {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    border-left: 1px solid $gray-500;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+    &::before {
+      content: "\f105";
+      font-family: "Font Awesome 5 Pro";
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      color: #666;
+      font-size: 18px;
+      border-radius: 50%;
+      transition: 0.3s ease-out;
+    }
+
+    &.active {
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &-sub {
+    display: none;
+    background-color: rgba(#15191e, 0.08);
+    background-color: $gray-200;
+
+    .menu-link {
+      padding-left: 35px;
+      position: relative;
+    }
+  }
+
+  &-sub-2 {
+    background-color: $gray-400;
+
+    .menu-link {
+      padding-left: 45px;
+    }
+  }
+
+  &-sub-3 {
+    background-color: $gray-600;
+
+    .menu-link {
+      padding-left: 55px;
+    }
+  }
+
+  &-root > &-item > &-link {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  @include media-breakpoint-up(xl) {
+    &:not(.menu-sub) {
+      border: 0;
+    }
+
+    // menu root
+    &-root {
+      display: flex;
+      border: 0;
+    }
+
+    &-root &-item {
+      border: 0;
+    }
+
+    &-root &-toggle {
+      pointer-events: none;
+    }
+
+    &-root &-sub {
+      min-width: 200px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 100%;
+      border-radius: 4px;
+      transform-origin: 0 4px;
+      background-color: $white;
+
+      &-right {
+        left: auto;
+        right: calc(100% + 4px);
+        transform-origin: 100% 0;
+
+        &::before {
+          right: auto;
+          left: 100%;
+        }
+      }
+    }
+
+    &-root &-sub &-item {
+      &:not(:last-child) {
+        border-bottom: 1px dashed $border-color;
+      }
+    }
+
+    &-root &-sub &-toggle {
+      width: 30px;
+      border-left: 0;
+    }
+
+    &-root &-sub &-link {
+      padding-left: 20px;
+    }
+
+    &-root &-sub &-item-group > &-link {
+      padding-right: 30px;
+    }
+
+    &-root &-sub &-item:hover > &-link {
+      background-color: $light;
+    }
+
+    &-root > &-item {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+
+    &-root > &-item > &-link {
+      font-size: 14px;
+      padding: 12px 0;
+      transition: 0.3s;
+    }
+
+    &-root > &-item > &-toggle {
+      display: none;
+    }
+
+    &-root > &-item-group > &-sub {
+      transform-origin: 0 0;
+      top: 100%;
+      left: 0;
+    }
+
+    &-root > &-item-group:hover > &-sub,
+    &-root > &-item-group &-item-group:hover > &-sub {
+      display: block;
+      animation: menu-float-show 0.2s ease-out;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    &-root > &-item {
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+
+    &-root > &-item > &-link {
+      font-size: 16px;
+      padding: 20px 0;
+    }
+  }
+}
