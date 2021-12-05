@@ -164,6 +164,18 @@ $(function () {
                 // Hiển thị phần thưởng demo
 
                 $light.fadeIn();
+
+                var href = "./success.html";
+
+                if (giftIndex === 1 || giftIndex === 5) {
+
+                    href = "./goodluck.html";
+                }
+
+                setTimeout(() => {
+
+                    window.location.href = href;
+                }, 1500);
             }
         }, 7000);
     });
