@@ -1,0 +1,145 @@
+.n-form {
+  &__container {
+    width: 80%;
+    max-width: 900px;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-weight: 800;
+    color: $secondary;
+    text-align: center;
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: $secondary;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 40px;
+    padding: 0 40px;
+    border-radius: 10px;
+    background: $secondary;
+    color: $white;
+    border: 0;
+    transition: 0.4s ease;
+
+    &:hover {
+      background-color: lighten($secondary, 15%);
+    }
+  }
+
+  &__footer {
+    margin-top: 40px;
+  }
+
+  .form-label {
+    color: $secondary;
+    margin-bottom: 6px;
+  }
+
+  .form-select,
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid $secondary;
+    color: $secondary;
+    padding-left: 16px;
+    transition: 0.4s ease;
+
+    &:focus {
+      background-color: rgba($secondary, 0.1);
+    }
+  }
+
+  input.form-control,
+  .form-select {
+    height: 40px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    &__container {
+      max-width: 650px;
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__desc {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    &__footer {
+      margin-top: 0;
+    }
+
+    &__btn {
+      font-size: 14px;
+      line-height: 35px;
+    }
+
+    .form-control,
+    .form-label,
+    .form-select {
+      font-size: 14px;
+    }
+
+    input.form-control,
+    .form-select {
+      height: 35px;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__title {
+      font-size: 30px;
+    }
+
+    &__desc {
+      font-size: 13px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__container {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__desc {
+      font-size: 12px;
+    }
+
+    &__btn {
+      font-size: 12px;
+      line-height: 32px;
+      padding: 0 30px;
+      border-radius: 8px;
+    }
+
+    &__footer {
+      margin-top: 20px;
+    }
+
+    .form-label,
+    .form-control,
+    .form-select {
+      font-size: 12px;
+    }
+
+    input.form-control,
+    .form-select {
+      height: 32px;
+      border-radius: 8px;
+    }
+  }
+}
