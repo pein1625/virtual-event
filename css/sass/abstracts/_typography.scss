@@ -1,6 +1,8 @@
-@include font-face("BeVietnamPro", "BeVietnamPro-Light");
-@include font-face("BeVietnamPro", "BeVietnamPro-Light", 300);
-@include font-face("BeVietnamPro", "BeVietnamPro-Bold", 700);
-@include font-face("BeVietnamPro", "BeVietnamPro-ExtraBold", 800);
+// @include font-face("BeVietnamPro", "BeVietnamPro-Light");
+// @include font-face("BeVietnamPro", "BeVietnamPro-Light", 300);
+// @include font-face("BeVietnamPro", "BeVietnamPro-Bold", 700);
+// @include font-face("BeVietnamPro", "BeVietnamPro-ExtraBold", 800);
 
-$bevn: "BeVietnamPro", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700;800&display=swap");
+
+$bevn: "Be Vietnam Pro", sans-serif;
